@@ -476,8 +476,8 @@ function normalizeRows(rows) {
     throw new Error(`필수 컬럼 또는 값이 부족합니다: ${missingFields.join(", ")}. 기본 6개 컬럼을 먼저 채워주세요.`);
   }
 
-  if (normalized.some((item) => item.buy_price <= 0 || item.current_price < 0 || item.quantity <= 0)) {
-    throw new Error("매수가와 수량은 0보다 커야 하고 현재가는 음수가 될 수 없습니다.");
+  if (normalized.some((item) => item.buy_price <= 0 || item.current_price <= 0 || item.quantity <= 0)) {
+    throw new Error("매수가, 현재가, 수량은 모두 0보다 커야 합니다.");
   }
   const analysisDates = [...new Set(normalized.map((item) => item.analysis_date).filter(Boolean))];
   if (analysisDates.length > 1 || (analysisDates.length === 1 && normalized.some((item) => !item.analysis_date))) {

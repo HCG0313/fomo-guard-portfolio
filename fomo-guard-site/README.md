@@ -6,6 +6,8 @@ FOMO Guard는 특정 종목을 추천하거나 매수, 매도 판단을 대신�
 
 ## 바로 보기
 
+샘플 CSV의 `analysis_date`는 시연 당시 분석 기준일입니다. 업로드 CSV에 같은 열을 넣으면 당시 결과를 재현하고, 없으면 업로드 당일을 기준으로 계산합니다. 샘플 시장 수치는 실시간 시세가 아닙니다.
+
 - Live Demo: https://fomo-guard.netlify.app/
 - Website Source: `fomo-guard-site/`
 

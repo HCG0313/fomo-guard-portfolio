@@ -646,7 +646,7 @@
             </article>
             <article class="guide-card">
               <span class="mini-label">권장 컬럼</span>
-              <p><code>weight_change_7d</code>, <code>weight_change_30d</code>가 있으면 시간 기반 해석 정확도가 올라갑니다.</p>
+              <p><code>analysis_date</code>를 모든 행에 같은 날짜로 넣으면 당시 기준 결과를 재현합니다. 없으면 업로드 당일을 기준으로 계산합니다. <code>weight_change_7d</code>, <code>weight_change_30d</code>도 사용할 수 있습니다.</p>
             </article>
           </div>
 
@@ -671,6 +671,7 @@
                   <tr><td>buy_price</td><td>평균 매수가</td><td>필수</td></tr>
                   <tr><td>current_price</td><td>현재가</td><td>필수</td></tr>
                   <tr><td>quantity</td><td>보유 수량</td><td>필수</td></tr>
+                  <tr><td>analysis_date</td><td>분석 기준일 (YYYY-MM-DD, 전 행 동일)</td><td>권장</td></tr>
                   <tr><td>purchase_date</td><td>매수일</td><td>정밀 진단</td></tr>
                   <tr><td>recent_7d_return</td><td>최근 7일 수익률</td><td>정밀 진단</td></tr>
                   <tr><td>recent_30d_volatility</td><td>최근 30일 변동성</td><td>정밀 진단</td></tr>

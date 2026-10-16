@@ -24,7 +24,7 @@ flowchart LR
 | `index.html` | 화면 구조, 업로드 입력, 대시보드 영역 |
 | `styles.css` | 레이아웃, 반응형 스타일, 차트 UI |
 | `app.js` | CSV 파싱, 데이터 정규화, FOMO 점수 계산, DOM 렌더링 |
-| `sample_portfolio.csv` | 대표 분석 시나리오와 업로드 테스트 데이터 |
+| `sample_portfolio.csv` | 대표 분석 시나리오와 업로드 테스트 데이터. `analysis_date`로 당시 기준일을 보존 |
 | `serve-site.js` | 로컬 테스트용 정적 서버 |
 
 ## 분석 시퀀스
@@ -42,6 +42,7 @@ sequenceDiagram
     Parser-->>UI: 행 데이터 반환
     UI->>Analyzer: 정규화된 데이터 전달
     Analyzer->>Analyzer: 필수 컬럼 검증
+    Analyzer->>Analyzer: 분석 기준일과 매수일 검증
     Analyzer->>Analyzer: 평가금액, 비중, 수익률 계산
     Analyzer->>Analyzer: FOMO 리스크와 점수 계산
     Analyzer-->>Renderer: summary, charts, insights 전달
